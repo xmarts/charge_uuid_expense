@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_charge_uuid_expense_charge_uuid_expense,charge_uuid_expense.charge_uuid_expense,model_charge_uuid_expense_charge_uuid_expense,,1,0,0,0
