@@ -6,6 +6,7 @@ import base64
 import os
 from lxml import etree, objectify
 from xml.etree import ElementTree as ET
+from odoo.exceptions import UserError, RedirectWarning, ValidationError
 
 class HRExpense(models.Model):
 	_inherit = "hr.expense"
@@ -29,7 +30,14 @@ class HRExpense(models.Model):
 				self.xml_uuid = 'Error en archivo XML'
 			else:
 				tfd = self._get_stamp_data(tree)
-				self.xml_uuid = tfd.get('UUID')
+				xml = tfd.get('UUID')
+				entrada_stock =self.env['hr.expense'].search([('xml_uuid', '=', xml)])
+				if entrada_stock:
+					raise UserError(_('Este XMl ya fue utilizado'))					
+				else:
+					tfd = self._get_stamp_data(tree)
+					self.xml_uuid = tfd.get('UUID')
+					
 		else: 
 			self.xml_uuid = 'XML no cargado'
 
