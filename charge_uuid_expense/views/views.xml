@@ -8,7 +8,8 @@
             <field name="tax_ids" position="after">
                 <field name="xml_file" readonly="0" widget="binary" string="Agregue XML" filename="xml_filename"/>
                 <field name="xml_filename" invisible="1"/>
-                <field name="xml_uuid" readonly="1"/>
+                <field name="xml_uuid_r" invisible="1"/>
+                <field name="xml_uuid" />
             </field>
             <header position="inside">
               <button name="read_xml_uuid" type="object" string="Test UUID" />
