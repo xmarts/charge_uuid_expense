@@ -11,9 +11,9 @@
                 <field name="xml_uuid_r" invisible="1"/>
                 <field name="xml_uuid" />
             </field>
-            <header position="inside">
+            <!-- <header position="inside">
               <button name="read_xml_uuid" type="object" string="Test UUID" />
-            </header>
+            </header> -->
         </field>
     </record>
 </odoo>
